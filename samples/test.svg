@@ -1,0 +1,6 @@
+<svg width="300" height="200" xmlns="http://www.w3.org/2000/svg">
+            <rect x='80' y='50' width='45%' height='60%' fill="white"/>
+            <text x="127" y="115" font-size="1.5em" fill="red">BOO</text>
+        </svg>
+
+        x='85' y='35' width='130' height='130'

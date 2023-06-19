@@ -1,6 +1,26 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
 const {Triangle, Circle, Square} = require("./lib/shapes");
+class SVG {
+    constructor(textAnswer, shapeAnswer) {
+        this.textAnswer = textAnswer;
+        this.shapeAnswer = shapeAnswer;
+    }
+    render() {
+        `<svg version="1.1" width="300" height="200" xmlns="http://www.w3.org/2000/svg">
+
+        ${this.textAnswer}
+
+        ${this.shapeAnswer}
+        </svg>`
+    }
+    setShape(shape) {
+        this.shapeAnswer = shape.render();
+    }
+    setText(text, textColor) {
+        this.textAnswer = `<text x="150" y="125" font-size="60" text-anchor="middle" fill="${textColor}">${text}</text>`
+    }
+}
 const questions = [{
     type: "input",
     name: "text",
@@ -48,17 +68,23 @@ function init(){
                 break;
         }
         shape.setColor(`${answers.shape_color}`);
-        console.log(answers)
-        console.log(shape)
-        // writeFile(answers)
+        // console.log(answers)
+        // console.log(shape)
+        let logo = new SVG();
+        logo.setShape(shape);
+        logo.setText(answers.text, answers.text_color);
+        console.log(logo)
+        let test = logo.render();
+        console.log(test)
+        // writeFile("sample.svg", logo.render())
     })
     
     
 }
 init();
 
-function writeFile(answers){
-    let textAnswer = answers.text;
-    fs.writeFile("./samples/sample.svg", textAnswer, (err) => err ? console.error(err) : console.log("success"))
+function writeFile(sample, render){
+    let textAnswer = render;
+    fs.writeFile(sample, textAnswer, (err) => err ? console.error(err) : console.log("success"))
 
 };

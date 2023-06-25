@@ -76,9 +76,10 @@ function init(){
             <text x="127" y="115" font-size="1.5em" fill="${textColor}">${text}</text>
         </svg>`;
         console.log(svgCode)
-        writeFile("sample.svg", svgCode);
-    })
-}
+        writeFile(`./examples/${answers.shape}.svg`, svgCode);
+        // writeFile("sample.svg", svgCode);
+    });
+};
 init();
 
 function writeFile(sample, render){

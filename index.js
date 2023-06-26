@@ -1,26 +1,7 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
 const {Triangle, Circle, Square} = require("./lib/shapes");
-// class SVG {
-//     constructor(textAnswer, shapeAnswer) {
-//         this.textAnswer = textAnswer;
-//         this.shapeAnswer = shapeAnswer;
-//     }
-//     render() {
-//         `<svg version="1.1" width="300" height="200" xmlns="http://www.w3.org/2000/svg">
 
-//         ${this.textAnswer}
-
-//         ${this.shapeAnswer}
-//         </svg>`
-//     }
-//     setShape(shape) {
-//         this.shapeAnswer = shape.render();
-//     }
-//     setText(text, textColor) {
-//         this.textAnswer = `<text x="150" y="125" font-size="60" text-anchor="middle" fill="${textColor}">${text}</text>`
-//     }
-// }
 const questions = [{
     type: "input",
     name: "text",

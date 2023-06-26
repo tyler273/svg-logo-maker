@@ -1,5 +1,5 @@
 
         <svg width="300" height="200" xmlns="http://www.w3.org/2000/svg">
             <polygon points="150, 18 244, 182 56, 182" fill="yellow" />
-            <text x="127" y="115" font-size="1.5em" fill="red">YUM</text>
+            <text x="127" y="115" font-size="1.5em" fill="orange">YUM</text>
         </svg>
